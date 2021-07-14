@@ -20,6 +20,8 @@ public class Receta {
 	//@Column(name = "recetas_nombre")
 	private String nombre;
 	
+	private String autor;
+	
 	private UUID foto;
 
 	private String preparacion;
@@ -41,6 +43,15 @@ public class Receta {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	public String getAutor() {
+		return autor;
+	}
+	
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+	
 	
 	public UUID getFoto() {
 		return foto;

@@ -67,8 +67,7 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 51%">Nombre</th>
-                                        <th style="width: 51%">Autor</th> 
-                                          <th>Preparación</th> 
+                                        <!--  <th>Preparación</th> -->
                                         <th style="width: 15%">Dificultad</th>
                                         <th style="width: 10%">Imagen</th>
                                         <th style="width: 8%">Ver</th>
@@ -81,7 +80,6 @@
                                 <tbody>
                                     <tr th:each="receta : ${recipes}">
                                         <td th:text="${receta.nombre}"></td>
-                                       <td th:text="${receta.autor}"></td>
                                         <td th:text="${receta.dificultad}"></td>
                                         <td><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="80" class="rounded"></td>
                                         
@@ -99,9 +97,6 @@
       												</div>
       												<div class="modal-body">
         												<h4 class="text-dark" th:text="${receta.nombre}"></h4>
-        												
-        												<h4 class="text-dark" th:text="${receta.autor}"></h4> 
-        				
         												<p><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="240" class="rounded"></p>
         												<!--  <div class="text" th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(receta.preparacion),'\n','&lt;br /&gt;'))}"></div> -->
         												<p class="text-dark" data-th-utext="${#strings.replace(#strings.escapeXml(receta.preparacion),'&#10;','&lt;br&gt;')}"></p>
